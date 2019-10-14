@@ -34,7 +34,7 @@
      </div>
    </nav>
    <br>
-   <input type="button" class="btn btn-info" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsProd.html'">
+   <input type="button" class="btn btn-info" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
    <br>
    <h1 class="text-center">Lista de Produtos</h1>
    <div class="container-fluid">
