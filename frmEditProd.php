@@ -24,6 +24,11 @@ if(!isset($_SESSION['user']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <title>Editar Produto</title>
 </head>
 <body>
@@ -41,28 +46,41 @@ if(!isset($_SESSION['user']))
        </div>
      </div>
    </nav>
-<div class="container">
-    <h1>Editar Produto</h1>
+
+<div class=" card border-success container" 
+style="background-color: #e6ffee; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
+
+<h1  class="text-center text-success">Editar Produto</h1>
+    
     <form id="frmEditProd" name="frmEditProd" method="POST" action="editProduto.php">
-      <div class="form-group">
-        <label for="lblId">ID: <?php echo $id ?></label>
+      <div class=" card-body">
+        <label class="font-weight-bold text-success " for="lblId">Codigo: </label>
+        <label  class="font-weight-bold" for="txtId" style="margin-left:30px"> <?php echo $id ?> </label>
         <input type="hidden"   id="id" name="id" value="<?php echo $id ?>">
       </div>
-      <div class="form-group">
-        <label for="lblDescricao">Descrição</label>
-        <input id="txtDescricao" class="form-control" type="text" name="txtDescricao" value="<?php echo $desc ?>">
+      <div class="card-body">
+        <label for="lblDescricao" class="font-weight-bold text-success">Descrição</label>
+        <input id="txtDescricao" class="form-control border-success" type="text" name="txtDescricao" required value="<?php echo $desc ?>">
       </div>
-      <div class="form-group">
-        <label for="lblQtde">Quantidade</label>
-        <input id="txtQtde" class="form-control" type="text" name="txtQtde" value="<?php echo $qtd ?>">
+      <div class="card-body">
+        <label for="lblQtde" class="font-weight-bold text-success">Quantidade</label>
+        <input id="txtQtde" class="form-control border-success" type="text" name="txtQtde" value="<?php echo $qtd ?>">
       </div>
-      <div class="form-group">
-        <label for="lblValor">Valor</label>
-        <input id="txtValor" class="form-control" type="text" name="txtValor" value="<?php echo $valor ?>">
+      <div class="card-body">
+        <label for="lblValor" class="font-weight-bold text-success">Valor</label>
+        <input id="txtValor" class="form-control border-success" type="text" name="txtValor" value="<?php echo $valor ?>">
       </div>
-      <input type="submit" class="btn btn-success" id="btGvr" name="btGvr" value="Gravar">
+      <div class="card-body text-center">
       <input type="button" value="Voltar" class="btn btn-warning" id="btVoltar" 
       name="btVoltar" onclick="javascript: location.href='frmListProd.php'">
+      <input type="submit" class="btn btn-success" id="btGvr" name="btGvr" value="Gravar">
+      </div>
+      
     </form>
 </div>
+<style>
+  .a{
+    font-size: 150%;
+  }
+</style>
 </html>

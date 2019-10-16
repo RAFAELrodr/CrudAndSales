@@ -18,7 +18,7 @@ if(!isset($_SESSION['user']))
 
 </head>
 
-<body>
+<body style="background-image: url('back.jpg'); background-repeat: no-repeat; background-size: 100%;">
   
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
  <a class="navbar-brand" href="#">Navbar</a>
@@ -34,8 +34,9 @@ if(!isset($_SESSION['user']))
    </div>
  </div>
 </nav>
-<div class="view" style="background-image: url(back.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+<div >
 </div>
+
 </body>
 
 </html>

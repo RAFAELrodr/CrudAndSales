@@ -33,12 +33,10 @@
        </div>
      </div>
    </nav>
-   <br>
-   <input type="button" class="btn btn-info" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
-   <br>
-   <h1 class="text-center">Lista de Produtos</h1>
+   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
+   <h1 style="margin-bottom: 50px" class="text-center text-success">Lista de Produtos</h1>
    <div class="container-fluid">
-
+          
      <table class=" container table table-hover table-striped" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="select.php">
        <thead class="bg-success">
          <tr>
@@ -46,7 +44,7 @@
            <th class="text-center" data-field="descricao" data-sortable="true">DESCRIÇÃO</th>
            <th class="text-center" data-field="quantidade" data-sortable="true">QUANTIDADE</th>
            <th class="text-center" data-field="valor" data-sortable="true">VALOR</th>
-           <th  class="text-center" data-field="edit" data-formatter="operateFormatter" data-events="operateEvents"></th>
+           <th  class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
            <!-- <th class="text-center" data-field="remove" data-formatter="operateFormatterr" data-events="operateEvents"></th> -->
          </tr>
 
@@ -67,7 +65,7 @@
        return [
          '<input style="margin-right:50px" type="submit" class="text-right btn btn-info edit" value="Editar">',
 
-         '<input type="submit" class=" tetx-left btn btn-danger edit" value="Remover">',
+         '<input type="submit" class=" tetx-left btn btn-danger remove" value="Remover">',
          
        ].join('')
      }
@@ -79,7 +77,7 @@
           
        },
        'click .remove': function(e, value, row, index) {
-        alert('excluir')
+        window.location.href = "frmRemoveProd.php?id="+row['id'];
        }
      }
    </script>
