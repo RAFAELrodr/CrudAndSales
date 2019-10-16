@@ -1,7 +1,7 @@
 <?php
-session_start();
+/* session_start();
 if (!isset($_SESSION['user']))
-  Header("Location: index.html");
+  Header("Location: index.html"); */
 
 include 'conexaoBanco.php';
 $id = trim($_GET['id']);
@@ -55,17 +55,20 @@ Connection::disconnect();
       </div>
     </div>
   </nav>
-  <div class="container">
-    <h1>Remover Produto</h1>
+  <div class="card border-success container" style="background-color: #e6ffee; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
+   
+  <h1 class="text-center text-success">Remover Produto</h1>
+
     <form id="frmEditProd" name="frmEditProd" method="POST" action="removeProd.php">
-      <div class="form-group">
+      <div class="card-body">
         <label for="lblId">
-          <span class="font-weight-bold">ID:</span>
-          <span class="font-weight-normal"><?php echo $id ?></span>
+          <span class="font-weight-bold text-success">ID:</span>
+          <span class="font-weight-bold" style="margin-left:30px"><?php echo $id ?></span>
         </label>
         <input type="hidden" name="id" value="<?php echo $id ?>" />
       </div>
-      <div class="form-group">
+
+      <div  class="card-body">
         <label for="lblDesc">
           <span class="font-weight-bold">Descricao:</span>
           <span class="font-weight-normal"><?php echo $desc ?></span>
