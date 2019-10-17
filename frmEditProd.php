@@ -78,9 +78,5 @@ style="background-color: #e6ffee; margin-top: 20px; margin-bottom: 30px; max-wid
       
     </form>
 </div>
-<style>
-  .a{
-    font-size: 150%;
-  }
-</style>
+
 </html>

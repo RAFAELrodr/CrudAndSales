@@ -36,6 +36,11 @@ Connection::disconnect();
       });
     });
   </script>
+  <style>
+  .font-lg{
+    font-size: 150%;
+  }
+</style>
 
   <title>Editar Produto</title>
 </head>
@@ -55,12 +60,12 @@ Connection::disconnect();
       </div>
     </div>
   </nav>
-  <div class="card border-success container" style="background-color: #e6ffee; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
+  <div class="card border-success container" style="background-color: #e6ffee; margin-top: 40px; margin-bottom: 30px; max-width: 30rem">
    
-  <h1 class="text-center text-success">Remover Produto</h1>
+  <h1 class="text-center text-success" style="margin-top:20px">Remover Produto</h1>
 
     <form id="frmEditProd" name="frmEditProd" method="POST" action="removeProd.php">
-      <div class="card-body">
+      <div class="font-lg card-body">
         <label for="lblId">
           <span class="font-weight-bold text-success">ID:</span>
           <span class="font-weight-bold" style="margin-left:30px"><?php echo $id ?></span>
@@ -68,30 +73,28 @@ Connection::disconnect();
         <input type="hidden" name="id" value="<?php echo $id ?>" />
       </div>
 
-      <div  class="card-body">
+      <div  class="font-lg card-body">
         <label for="lblDesc">
           <span class="font-weight-bold">Descricao:</span>
           <span class="font-weight-normal"><?php echo $desc ?></span>
         </label>
       </div>
-      <div class="form-group">
+      <div class="font-lg card-body">
         <label for="lblQtde">
           <span class="font-weight-bold">Quantidade:</span>
           <span class="font-weight-normal"><?php echo $qtd ?></span>
         </label>
       </div>
-      <div class="form-group">
+      <div class="font-lg card-body">
         <label for="lblValor">
           <span class="font-weight-bold">Valor:</span>
           <span class="font-weight-normal"><?php echo $valor ?></span>
         </label>
       </div>
+      <div class="card-body text-center">
       <input type="button" value="Voltar" class="btn btn-warning" id="btVoltar" name="btVoltar" onclick="javascript: location.href='frmListProd.php'">
       <!-- <input type="submit" class="btn btn-danger " id="btRem" name="btRem" value="Excluir"> -->
-
-
       <a href="#delModal" class="btn btn-danger" data-toggle="modal">Excluir</a>
-
       <!-- Modal HTML -->
       <div id="delModal" class="modal fade">
         <div class="modal-dialog">
@@ -111,6 +114,8 @@ Connection::disconnect();
         </div>
       </div>
 
+      </div>
+      
     </form>
   </div>
 

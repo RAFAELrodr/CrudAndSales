@@ -18,7 +18,7 @@
 
  </head>
 
- <body>
+ <body style="background-image: url('frutas.jpg'); ; background-size: 60%;">
    <nav class="navbar navbar-expand-lg navbar-light bg-success">
      <a class="navbar-brand" href="#">Navbar</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +33,15 @@
        </div>
      </div>
    </nav>
-   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
-   <h1 style="margin-bottom: 50px" class="text-center text-success">Lista de Produtos</h1>
-   <div class="container-fluid">
+   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
+
+   <div class="container col-md-4">
+   <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Produtos</h1>
+   </div>
+   
+   <div class="form-group">
           
-     <table class=" container table table-hover table-striped" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="select.php">
+     <table class=" container table table-hover table-striped bg-light" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="select.php">
        <thead class="bg-success">
          <tr>
            <th class="text-center" data-field="id" data-sortable="true">ID</th>
