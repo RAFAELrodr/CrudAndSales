@@ -1,4 +1,4 @@
- <?php
+<?php
   /* session_start();
   if (!isset($_SESSION['user']))
     Header("Location: index.html"); */
@@ -9,7 +9,7 @@
  <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Lista de Produtos</title>
+   <title>Lista de Clientes</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -28,26 +28,26 @@
        <div class="navbar-nav">
          <a class="nav-item nav-link" href="home.php">Home </a>
          <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
-         <a class="nav-item nav-link" href="#">Clientes</a>
+         <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
          <a class="nav-item nav-link disabled" href="#">Disabled</a>
        </div>
      </div>
    </nav>
-   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
+   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Cliente" onclick="javascript: location.href='frmInsertProd.html'">
 
    <div class="container col-md-4">
-   <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Produtos</h1>
+   <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Clientes</h1>
    </div>
    
    <div class="form-group">
           
-     <table class=" container table table-hover table-striped bg-light" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="selectProd.php">
+     <table class=" container table table-hover table-striped bg-light" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="selectClientes.php">
        <thead class="bg-success">
          <tr>
            <th class="text-center" data-field="id" data-sortable="true">ID</th>
-           <th class="text-center" data-field="descricao" data-sortable="true">DESCRIÇÃO</th>
-           <th class="text-center" data-field="quantidade" data-sortable="true">QUANTIDADE</th>
-           <th class="text-center" data-field="valor" data-sortable="true">VALOR</th>
+           <th class="text-center" data-field="nome" data-sortable="true">NOME</th>
+           <th class="text-center" data-field="telefone" data-sortable="true">TELEFONE</th>
+           <th class="text-center" data-field="endereco" data-sortable="true">ENDEREÇO</th>
            <th  class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
            <!-- <th class="text-center" data-field="remove" data-formatter="operateFormatterr" data-events="operateEvents"></th> -->
          </tr>

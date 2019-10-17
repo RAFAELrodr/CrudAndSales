@@ -27,10 +27,10 @@ if(!isset($_SESSION['user']))
  </button>
  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    <div class="navbar-nav">
-     <a class="nav-item nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
+     <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
      <a class="nav-item nav-link " href="frmListProd.php">Produtos</a>
-     <a class="nav-item nav-link" href="#">Pricing</a>
-     <a class="nav-item nav-link disabled" href="#">Disabled</a>
+     <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
+     <a class="nav-item nav-link disabled" href="#">Vendas</a>
    </div>
  </div>
 </nav>

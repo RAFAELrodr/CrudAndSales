@@ -31,7 +31,7 @@ if(!isset($_SESSION['user']))
 
     <title>Editar Produto</title>
 </head>
-<body>
+<body style="background-image: url('frutas.jpg'); ; background-size: 60%;">
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
      <a class="navbar-brand" href="#">Navbar</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@ if(!isset($_SESSION['user']))
      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
        <div class="navbar-nav">
          <a class="nav-item nav-link" href="home.php">Home </a>
-         <a class="nav-item nav-link active" href="#">Produtos</a>
+         <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
          <a class="nav-item nav-link" href="#">Pricing</a>
          <a class="nav-item nav-link disabled" href="#">Disabled</a>
        </div>
@@ -48,9 +48,9 @@ if(!isset($_SESSION['user']))
    </nav>
 
 <div class=" card border-success container" 
-style="background-color: #e6ffee; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
+style="background-color: #f2f2f2; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
 
-<h1  class="text-center text-success">Editar Produto</h1>
+<h1  class="font-weight-bold text-center text-success" style="margin-top: 20px">Editar Produto</h1>
     
     <form id="frmEditProd" name="frmEditProd" method="POST" action="editProduto.php">
       <div class=" card-body">
