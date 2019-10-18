@@ -1,17 +1,17 @@
 <?php
-$desc = trim($_POST['txtDescricao']);
-$qtd = trim($_POST['txtQtde']);
-$valor = trim($_POST['txtValor']);
+$nome = trim($_POST['txtNome']);
+$cpf = trim($_POST['txtCpf']);
+$end = trim($_POST['txtEndereco']);
 
-if(!empty($desc) && !empty($qtd) && !empty($valor)){
+if(!empty($nome) && !empty($cpf) && !empty($end)){
     include 'conexaoBanco.php';
     $pdo = Connection::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO produtos (descricao, quantidade, valor) VALUES (?,?,?);";
+    $sql = "INSERT INTO clientes (nome, cpf, endereco) VALUES (?,?,?);";
     $q = $pdo->prepare($sql);
-    $q->execute(array($desc, $qtd, $valor));
+    $q->execute(array($nome, $cpf, $end));
     Connection::disconnect();
 }
 
-header("location:frmListProd.php");
+header("location:frmListCliente.php");
 ?>

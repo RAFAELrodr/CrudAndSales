@@ -7,7 +7,7 @@
    $data = [
      'id' => $row['id'],
      'nome' => $row['nome'],
-     'telefone' => $row['telefone'],
+     'cpf' => $row['cpf'],
      'endereco' => $row['endereco']
     ];
    $array[] = $data;

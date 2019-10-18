@@ -33,7 +33,7 @@
        </div>
      </div>
    </nav>
-   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Cliente" onclick="javascript: location.href='frmInsertProd.html'">
+   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Cliente" onclick="javascript: location.href='frmInsertCliente.html'">
 
    <div class="container col-md-4">
    <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Clientes</h1>
@@ -46,7 +46,7 @@
          <tr>
            <th class="text-center" data-field="id" data-sortable="true">ID</th>
            <th class="text-center" data-field="nome" data-sortable="true">NOME</th>
-           <th class="text-center" data-field="telefone" data-sortable="true">TELEFONE</th>
+           <th class="text-center" data-field="cpf" data-sortable="true">CPF</th>
            <th class="text-center" data-field="endereco" data-sortable="true">ENDEREÇO</th>
            <th  class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
            <!-- <th class="text-center" data-field="remove" data-formatter="operateFormatterr" data-events="operateEvents"></th> -->
