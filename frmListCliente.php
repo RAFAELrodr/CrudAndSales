@@ -27,7 +27,7 @@
      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
        <div class="navbar-nav">
          <a class="nav-item nav-link" href="home.php">Home </a>
-         <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
+         <a class="nav-item nav-link active" href="frmListProd.php">Produtos</a>
          <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
          <a class="nav-item nav-link disabled" href="#">Disabled</a>
        </div>
@@ -67,7 +67,7 @@
 
      function operateFormatter(value, row, index) {
        return [
-         '<input style="margin-right:50px" type="submit" class="text-right btn btn-info edit" value="Editar">',
+         '<input style="margin-right:3px" type="submit" class="text-right btn btn-info edit" value="Editar">',
 
          '<input type="submit" class=" tetx-left btn btn-danger remove" value="Remover">',
          
@@ -77,11 +77,11 @@
 
      window.operateEvents = {
        'click .edit': function(e, value, row, index) {
-          window.location.href = "frmEditProd.php?id="+row['id'];
+          window.location.href = "frmEditCliente.php?id="+row['id'];
           
        },
        'click .remove': function(e, value, row, index) {
-        window.location.href = "frmRemoveProd.php?id="+row['id'];
+        window.location.href = "frmRemoveCliente.php?id="+row['id'];
        }
      }
    </script>

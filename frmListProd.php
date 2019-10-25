@@ -28,7 +28,7 @@
        <div class="navbar-nav">
          <a class="nav-item nav-link" href="home.php">Home </a>
          <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
-         <a class="nav-item nav-link" href="#">Clientes</a>
+         <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
          <a class="nav-item nav-link disabled" href="#">Disabled</a>
        </div>
      </div>

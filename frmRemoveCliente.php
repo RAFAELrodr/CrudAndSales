@@ -7,13 +7,13 @@ include 'conexaoBanco.php';
 $id = trim($_GET['id']);
 $pdo = Connection::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = 'SELECT * FROM produtos WHERE id=?';
+$sql = 'SELECT * FROM clientes WHERE id=?';
 $q = $pdo->prepare($sql);
 $q->execute(array($id));
 $data = $q->fetch(PDO::FETCH_ASSOC);
-$desc = $data['descricao'];
-$qtd = $data['quantidade'];
-$valor = $data['valor'];
+$nome = $data['nome'];
+$cpf = $data['cpf'];
+$end = $data['endereco'];
 Connection::disconnect();
 ?>
 
@@ -42,7 +42,7 @@ Connection::disconnect();
   }
 </style>
 
-  <title>Editar Produto</title>
+  <title>Remover Cliente</title>
 </head>
 
 <body style="background-image: url('frutas.jpg'); background-size: 60%;">
@@ -62,9 +62,9 @@ Connection::disconnect();
   </nav>
   <div class="card border-success container" style="background-color: #f2f2f2; margin-top: 40px; margin-bottom: 30px; max-width: 30rem">
    
-  <h1 class="text-center text-success" style="margin-top:20px">Remover Produto</h1>
+  <h1 class="text-center text-success" style="margin-top:20px">Remover Cliente</h1>
 
-    <form id="frmRemoveProd" name="frmRemoveProd" method="POST" action="removeProd.php">
+    <form id="frmRemoveCliente" name="frmRemoveCliente" method="POST" action="removeCliente.php">
       <div class="font-lg card-body ">
         <label for="lblId">
           <span class="font-weight-bold text-success">ID:</span>
@@ -74,25 +74,25 @@ Connection::disconnect();
       </div>
 
       <div  class="font-lg card-body text-center">
-        <label for="lblDesc">
-          <span class="font-weight-bold">Descricao:</span>
-          <span class="font-weight-normal " style="margin-left:50px"><?php echo $desc ?></span>
+        <label for="lblNome">
+          <span class="font-weight-bold">Nome:</span>
+          <span class="font-weight-normal " style="margin-left:50px"><?php echo $nome ?></span>
         </label>
       </div>
       <div class="font-lg card-body text-center">
-        <label for="lblQtde">
-          <span class="font-weight-bold">Quantidade:</span>
-          <span class="font-weight-normal" style="margin-left:30px"><?php echo $qtd ?></span>
+        <label for="lblCpf">
+          <span class="font-weight-bold">CPF:</span>
+          <span class="font-weight-normal" style="margin-left:30px"><?php echo $cpf ?></span>
         </label>
       </div>
       <div class="font-lg card-body text-center">
-        <label for="lblValor">
-          <span class="font-weight-bold">Valor:</span>
-          <span class="font-weight-normal" style="margin-left: 100px"><?php echo $valor ?></span>
+        <label for="lblEndereco">
+          <span class="font-weight-bold">Endereco:</span>
+          <span class="font-weight-normal" style="margin-left: 100px"><?php echo $end ?></span>
         </label>
       </div>
       <div class="card-body text-center">
-      <input type="button" value="Voltar" class="btn btn-warning" id="btVoltar" name="btVoltar" onclick="javascript: location.href='frmListProd.php'">
+      <input type="button" value="Voltar" class="btn btn-warning" id="btVoltar" name="btVoltar" onclick="javascript: location.href='frmListCliente.php'">
       <!-- <input type="submit" class="btn btn-danger " id="btRem" name="btRem" value="Excluir"> -->
       <a href="#delModal" class="btn btn-danger" data-toggle="modal">Excluir</a>
       <!-- Modal HTML -->
@@ -104,7 +104,7 @@ Connection::disconnect();
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <p>Deseja remover este produto?</p>
+              <p>Deseja remover este cliente?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

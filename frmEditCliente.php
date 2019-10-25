@@ -7,13 +7,13 @@ if(!isset($_SESSION['user']))
  $id = trim($_GET['id']);
  $pdo = Connection::connect();
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- $sql = 'SELECT * FROM produtos WHERE id=?';
+ $sql = 'SELECT * FROM clientes WHERE id=?';
  $q = $pdo->prepare($sql);
  $q->execute(array($id));
  $data =$q->fetch(PDO::FETCH_ASSOC);
- $desc = $data['descricao'];
- $qtd = $data['quantidade'];
- $valor = $data['valor'];
+ $nome = $data['nome'];
+ $cpf = $data['cpf'];
+ $endereco = $data['endereco'];
  Connection::disconnect();
 
   ?>
@@ -29,7 +29,7 @@ if(!isset($_SESSION['user']))
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <title>Editar Produto</title>
+    <title>Editar Cliente</title>
 </head>
 <body style="background-image: url('frutas.jpg'); ; background-size: 60%;">
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -50,29 +50,29 @@ if(!isset($_SESSION['user']))
 <div class=" card border-success container" 
 style="background-color: #f2f2f2; margin-top: 20px; margin-bottom: 30px; max-width: 30rem">
 
-<h1  class="font-weight-bold text-center text-success" style="margin-top: 20px">Editar Produto</h1>
+<h1  class="font-weight-bold text-center text-success" style="margin-top: 20px">Editar Cliente</h1>
     
-    <form id="frmEditProd" name="frmEditProd" method="POST" action="editProduto.php">
+    <form id="frmEditCliente" name="frmEditProd" method="POST" action="editCliente.php">
       <div class=" card-body">
         <label class="font-weight-bold text-success " for="lblId">Codigo: </label>
         <label  class="font-weight-bold" for="txtId" style="margin-left:30px"> <?php echo $id ?> </label>
         <input type="hidden"   id="id" name="id" value="<?php echo $id ?>">
       </div>
       <div class="card-body">
-        <label for="lblDescricao" class="font-weight-bold text-success">Descrição</label>
-        <input id="txtDescricao" class="form-control border-success" type="text" name="txtDescricao" required value="<?php echo $desc ?>">
+        <label for="lblNome" class="font-weight-bold text-success">Nome'</label>
+        <input id="txtNome" class="form-control border-success" type="text" name="txtNome" required value="<?php echo $nome ?>">
       </div>
       <div class="card-body">
-        <label for="lblQtde" class="font-weight-bold text-success">Quantidade</label>
-        <input id="txtQtde" class="form-control border-success" type="text" name="txtQtde" value="<?php echo $qtd ?>">
+        <label for="lblCpf" class="font-weight-bold text-success">CPF</label>
+        <input id="txtCpf" class="form-control border-success" type="text" name="txtCpf" value="<?php echo $cpf ?>">
       </div>
       <div class="card-body">
-        <label for="lblValor" class="font-weight-bold text-success">Valor</label>
-        <input id="txtValor" class="form-control border-success" type="text" name="txtValor" value="<?php echo $valor ?>">
+        <label for="lblEndereco" class="font-weight-bold text-success">Endereco</label>
+        <input id="txtEndereco" class="form-control border-success" type="text" name="txtEndereco" value="<?php echo $endereco ?>">
       </div>
       <div class="card-body text-center">
       <input type="button" value="Voltar" class="btn btn-warning" id="btVoltar" 
-      name="btVoltar" onclick="javascript: location.href='frmListProd.php'">
+      name="btVoltar" onclick="javascript: location.href='frmListCliente.php'">
       <input type="submit" class="btn btn-success" id="btGvr" name="btGvr" value="Gravar">
       </div>
       
