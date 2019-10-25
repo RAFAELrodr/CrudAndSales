@@ -64,7 +64,8 @@ Connection::disconnect();
    
   <h1 class="text-center text-success" style="margin-top:20px">Remover Produto</h1>
 
-    <form id="frmRemoveProd" name="frmRemoveProd" method="POST" action="removeProd.php">
+    <form id="frmRemoveProd" name="frmRemove
+    Prod" method="POST" action="removeProd.php">
       <div class="font-lg card-body ">
         <label for="lblId">
           <span class="font-weight-bold text-success">ID:</span>
