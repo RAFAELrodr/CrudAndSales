@@ -16,9 +16,10 @@ if(!isset($_SESSION['user']))
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
   <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 </head>
 
-<body style="background-image: url('back.jpg'); background-repeat: no-repeat; background-size: 100%;">
+<body style="background-image: url('frutas.jpg'); background-repeat: no-repeat; background-size: 100%;">
   
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
  <a class="navbar-brand" href="#">Navbar</a>
@@ -30,12 +31,19 @@ if(!isset($_SESSION['user']))
      <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
      <a class="nav-item nav-link " href="frmListProd.php">Produtos</a>
      <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
-     <a class="nav-item nav-link" href="frmVenda.php">Vendas</a>
+     <a class="nav-item nav-link disabled" href="#">Vendas</a>
    </div>
  </div>
 </nav>
 <div >
-</div>
+    <br>
+<form name="frmBusca" class="container form-inline my-2 my-lg-0" method="POST" id="form-search" 
+action="busca.php" >
+    <span>Nome: </span>
+      <input class="form-control mr-sm-2" name="pesquisa" id="buscar" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul></ul>
 </body>
 
 </html>
