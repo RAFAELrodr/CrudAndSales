@@ -2,7 +2,18 @@
 /* session_start();
 if(!isset($_SESSION['user']))
   Header("Location: index.html"); */
-  ?>
+    
+    if($_POST){
+      include "conexaoBanco.php";
+      $pdo = Connection::connect();
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $descricao = trim($_POST['pesquisa']);
+      $sql = 'SELECT descricao, quantidade, valor FROM produtos WHERE descricao = ?';
+      $q = $pdo->prepare($sql);
+      $q->execute(array($descricao));
+      $data =$q->fetch(PDO::FETCH_ASSOC);
+    ?>
+    
 <!doctype html>
 <html lang="pt-br">
 
@@ -38,12 +49,13 @@ if(!isset($_SESSION['user']))
 <div >
     <br>
 <form name="frmBusca" class="container form-inline my-2 my-lg-0" method="POST" id="form-search" 
-action="busca.php" >
+action="" >
     <span>Nome: </span>
-      <input class="form-control mr-sm-2" name="pesquisa" id="buscar" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" name="pesquisa" id="buscar" type="text" placeholder="Search" aria-label="Search">
+      <input class="btn btn-outline-success my-2 my-sm-0" name="sendPesq" type="submit" value="Pesquisar">
     </form>
-    <ul></ul>
+    
+    
+    
 </body>
-
 </html>
