@@ -3,15 +3,7 @@
 if(!isset($_SESSION['user']))
   Header("Location: index.html"); */
     
-    if($_POST){
-      include "conexaoBanco.php";
-      $pdo = Connection::connect();
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $descricao = trim($_POST['pesquisa']);
-      $sql = 'SELECT descricao, quantidade, valor FROM produtos WHERE descricao = ?';
-      $q = $pdo->prepare($sql);
-      $q->execute(array($descricao));
-      $data =$q->fetch(PDO::FETCH_ASSOC);
+    
     ?>
     
 <!doctype html>
@@ -46,16 +38,41 @@ if(!isset($_SESSION['user']))
    </div>
  </div>
 </nav>
-<div >
-    <br>
-<form name="frmBusca" class="container form-inline my-2 my-lg-0" method="POST" id="form-search" 
-action="" >
-    <span>Nome: </span>
-      <input class="form-control mr-sm-2" name="pesquisa" id="buscar" type="text" placeholder="Search" aria-label="Search">
-      <input class="btn btn-outline-success my-2 my-sm-0" name="sendPesq" type="submit" value="Pesquisar">
-    </form>
-    
-    
-    
+<div class="container">
+  <h2>Vendas</h2>
+  <form role="form" method="POST">
+  <div class="form-group">
+    <label for="descri">descricao</label>
+    <input type="text" class="form-control"  name="pesquisa">
+  </div>
+  <button type="submit" class="btn btn-success">Consultar</button>
+  
+</form>
+<?php 
+
+if($_POST){
+  require('conexaoBanco.php');
+  $con = Connection::connect();
+  $desc=$_POST['pesquisa'];
+  $sql = 'SELECT id, descricao, quantidade, valor FROM produtos WHERE descricao = :pesquisa';
+  $stmt = $con->prepare($sql);
+  $result = $stmt->execute(array(':pesquisa'=>$desc));
+  $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+
+  if(!empty($rows)){
+    count($rows);
+    foreach($rows AS $row){
+      echo "ID: ".$row->id;
+      echo "Descricao: ".$row->descricao."<br>";
+    }
+  }else {
+    echo "Não há dados";
+  }
+}else{
+  echo "";
+}
+?> 
+</div>
+      
 </body>
 </html>
