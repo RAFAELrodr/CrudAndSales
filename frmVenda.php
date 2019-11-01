@@ -18,7 +18,8 @@ if(!isset($_SESSION['user']))
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
   <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
-
+  
+  <script src="javascript.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 </head>
 
@@ -40,17 +41,16 @@ if(!isset($_SESSION['user']))
 </nav>
 <div class="container">
   <h2>Vendas</h2>
-  <form role="form" method="POST">
+  <form action="busca.php" method="POST">
   <div class="form-group">
-    <label for="descri">descricao</label>
-    <input type="text" class="form-control"  name="pesquisa">
-  </div>
-  <button type="submit" class="btn btn-success">Consultar</button>
-  
+    <label for="descricao">Descricao</label>
+    <input type="text" class="form-control"  name="pesquisa" id="pesquisa">
+  </div>  
 </form>
+<div id="resultado">
 <?php 
-
-if($_POST){
+  echo ""
+/* if($_POST){
   require('conexaoBanco.php');
   $con = Connection::connect();
   $desc=$_POST['pesquisa'];
@@ -70,8 +70,11 @@ if($_POST){
   }
 }else{
   echo "";
-}
+} */
 ?> 
+</div>
+
+
 </div>
       
 </body>
