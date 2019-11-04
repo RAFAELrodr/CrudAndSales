@@ -41,7 +41,7 @@ if(!isset($_SESSION['user']))
 </nav>
 <div class="container">
   <h2>Vendas</h2>
-  <form action="busca.php" method="POST">
+  <form action="busca.php">
   <div class="form-group">
     <label for="descricao">Descricao</label>
     <input type="text" class="form-control"  name="pesquisa" id="pesquisa">
@@ -49,28 +49,42 @@ if(!isset($_SESSION['user']))
 </form>
 <div id="resultado">
 <?php 
-  echo ""
-/* if($_POST){
-  require('conexaoBanco.php');
-  $con = Connection::connect();
-  $desc=$_POST['pesquisa'];
-  $sql = 'SELECT id, descricao, quantidade, valor FROM produtos WHERE descricao = :pesquisa';
-  $stmt = $con->prepare($sql);
-  $result = $stmt->execute(array(':pesquisa'=>$desc));
-  $rows = $stmt->fetchAll(\PDO::FETCH_OBJ);
+    include 'conexaoBanco.php';
+    $pdo = Connection::connect();
+    $sql = 'SELECT * FROM produtos;';
+    echo "
+        <table class='container table table-hover table-striped bg-light'>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Produtos</td>
+                    <td>Quantidade</td>
+                    <td>Valor</td>
+                </tr>
+            </thead>
 
-  if(!empty($rows)){
-    count($rows);
-    foreach($rows AS $row){
-      echo "ID: ".$row->id;
-      echo "Descricao: ".$row->descricao."<br>";
+            <tbody>
+    ";
+    foreach ($pdo->query ($sql) as $row){
+      
+        $id = $row['id'];
+        $desc = $row['descricao'];
+        $qtde = $row['quantidade'];
+        $valor = $row['valor'];
+             
+      echo "
+        <tr>
+            <td>$id</td>
+            <td>$desc</td>
+            <td>$qtde</td>
+            <td>$valor</td>
+        </tr>
+    ";
     }
-  }else {
-    echo "Não há dados";
-  }
-}else{
-  echo "";
-} */
+    echo "
+    </tbody>
+</table>
+";
 ?> 
 </div>
 
