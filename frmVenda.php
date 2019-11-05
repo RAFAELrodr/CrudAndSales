@@ -19,7 +19,6 @@ if(!isset($_SESSION['user']))
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
   <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
   
-  <script src="javascript.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 </head>
 
@@ -41,19 +40,21 @@ if(!isset($_SESSION['user']))
 </nav>
 <div class="container">
   <h2>Vendas</h2>
-  <form action="busca.php">
-  <div class="form-group">
-    <label for="descricao">Descricao</label>
-    <input type="text" class="form-control"  name="pesquisa" id="pesquisa">
-  </div>  
-</form>
-<div id="resultado">
+  
+  <div class="form-group input-group">
+ <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+ <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
+ </div>
+
+<div >
 <?php 
     include 'conexaoBanco.php';
     $pdo = Connection::connect();
     $sql = 'SELECT * FROM produtos;';
-    echo "
-        <table class='container table table-hover table-striped bg-light'>
+    
+    ?>
+    
+        <table id="tabela" class="container table table-hover table-striped bg-light">
             <thead>
                 <tr>
                     <td>Id</td>
@@ -62,34 +63,34 @@ if(!isset($_SESSION['user']))
                     <td>Valor</td>
                 </tr>
             </thead>
-
+            <?php foreach ($pdo->query ($sql) as $row){
+               $id = $row['id'];
+               $desc = $row['descricao'];
+               $qtde = $row['quantidade'];
+               $valor = $row['valor'];
+              ?>
+            
             <tbody>
-    ";
-    foreach ($pdo->query ($sql) as $row){
-      
-        $id = $row['id'];
-        $desc = $row['descricao'];
-        $qtde = $row['quantidade'];
-        $valor = $row['valor'];
-             
-      echo "
+            
         <tr>
-            <td>$id</td>
-            <td>$desc</td>
-            <td>$qtde</td>
-            <td>$valor</td>
+
+            <td><?php echo $id?></td>
+            <td><?php echo $desc?></td>
+            <td><?php echo $qtde?></td>
+            <td><?php echo $valor?></td>
         </tr>
-    ";
-    }
-    echo "
+            
     </tbody>
+    <?php }?>
 </table>
-";
-?> 
 </div>
 
 
 </div>
       
 </body>
+
+<script>
+  $('input#txt_pesquisa').quicksearch('table#tabela tbody tr');
+</script>
 </html>
