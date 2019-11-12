@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $('#pesquisa').keyup(function(){
+    $('#campo').keyup(function(){
 
         $('form').submit(function(){
             var dados = $(this).serialize();

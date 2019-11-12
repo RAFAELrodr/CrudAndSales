@@ -30,7 +30,7 @@ if(!isset($_SESSION['user']))
      <a class="nav-item nav-link active" href="home.php">Home <span class="sr-only">(current)</span></a>
      <a class="nav-item nav-link " href="frmListProd.php">Produtos</a>
      <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
-     <a class="nav-item nav-link" href="frmVenda.php">Vendas</a>
+     <a class="nav-item nav-link" href="frmVendas.php">Vendas</a>
    </div>
  </div>
 </nav>
