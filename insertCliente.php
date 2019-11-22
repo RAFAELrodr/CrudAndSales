@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['user']))
+Header("Location: index.html");
+
 $nome = trim($_POST['txtNome']);
 $cpf = trim($_POST['txtCpf']);
 $end = trim($_POST['txtEndereco']);

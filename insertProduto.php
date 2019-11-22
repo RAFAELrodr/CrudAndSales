@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['user']))
+Header("Location: index.html");
+
 $desc = trim($_POST['txtDescricao']);
 $qtd = trim($_POST['txtQtde']);
 $valor = trim($_POST['txtValor']);

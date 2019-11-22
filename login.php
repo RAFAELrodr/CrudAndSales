@@ -17,5 +17,7 @@
         session_start();
         $_SESSION['user'] = $user;
         Header("Location: home.php");
+    }else{
+        
     }
 ?>

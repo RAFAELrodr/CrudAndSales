@@ -1,7 +1,7 @@
  <?php
-  /* session_start();
+  session_start();
   if (!isset($_SESSION['user']))
-    Header("Location: index.html"); */
+    Header("Location: index.html");
   ?>
  <!doctype html>
  <html lang="pt-br">
@@ -29,18 +29,18 @@
          <a class="nav-item nav-link" href="home.php">Home </a>
          <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
          <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
-         <a class="nav-item nav-link disabled" href="#">Disabled</a>
+         <a class="nav-item nav-link" href="frmVendas.php">Vendas</a>
        </div>
      </div>
    </nav>
-   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
+   <input style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Produto" onclick="javascript: location.href='frmInsertProd.html'">
 
    <div class="container col-md-4">
-   <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Produtos</h1>
+     <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Produtos</h1>
    </div>
-   
+
    <div class="form-group">
-          
+
      <table class=" container table table-hover table-striped bg-light" id="table" data-toggle="table" data-sort-class="table-active" data-sortable="true" data-url="selectProd.php">
        <thead class="bg-success">
          <tr>
@@ -48,7 +48,7 @@
            <th class="text-center" data-field="descricao" data-sortable="true">DESCRIÇÃO</th>
            <th class="text-center" data-field="quantidade" data-sortable="true">QUANTIDADE</th>
            <th class="text-center" data-field="valor" data-sortable="true">VALOR</th>
-           <th  class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
+           <th class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
            <!-- <th class="text-center" data-field="remove" data-formatter="operateFormatterr" data-events="operateEvents"></th> -->
          </tr>
 
@@ -70,18 +70,18 @@
          '<input style="margin-right:50px" type="submit" class="text-right btn btn-info edit" value="Editar">',
 
          '<input type="submit" class=" tetx-left btn btn-danger remove" value="Remover">',
-         
+
        ].join('')
      }
 
 
      window.operateEvents = {
        'click .edit': function(e, value, row, index) {
-          window.location.href = "frmEditProd.php?id="+row['id'];
-          
+         window.location.href = "frmEditProd.php?id=" + row['id'];
+
        },
        'click .remove': function(e, value, row, index) {
-        window.location.href = "frmRemoveProd.php?id="+row['id'];
+         window.location.href = "frmRemoveProd.php?id=" + row['id'];
        }
      }
    </script>

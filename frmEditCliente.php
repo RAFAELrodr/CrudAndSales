@@ -1,7 +1,7 @@
 <?php
-/* session_start();
+ session_start();
 if(!isset($_SESSION['user']))
-  Header("Location: index.html"); */
+  Header("Location: index.html");
 
  include 'conexaoBanco.php';
  $id = trim($_GET['id']);

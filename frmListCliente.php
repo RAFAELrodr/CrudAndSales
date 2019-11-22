@@ -1,7 +1,7 @@
 <?php
-  /* session_start();
+session_start();
   if (!isset($_SESSION['user']))
-    Header("Location: index.html"); */
+    Header("Location: index.html");
   ?>
  <!doctype html>
  <html lang="pt-br">
@@ -29,11 +29,11 @@
          <a class="nav-item nav-link" href="home.php">Home </a>
          <a class="nav-item nav-link active" href="frmListProd.php">Produtos</a>
          <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
-         <a class="nav-item nav-link disabled" href="#">Disabled</a>
+         <a class="nav-item nav-link" href="frmVendas.php">Vendas</a>
        </div>
      </div>
    </nav>
-   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Cliente" onclick="javascript: location.href='frmInsertCliente.html'">
+   <input  style="margin-left:50px; margin-top: 40px;" type="button" class="btn btn-info btn-lg" id="btNovo" value="Adicionar Cliente" onclick="javascript: location.href='frmInsertCliente.php'">
 
    <div class="container col-md-4">
    <h1 style="margin-bottom: 50px; padding:10px;" class="bg-white text-center text-success">Lista de Clientes</h1>

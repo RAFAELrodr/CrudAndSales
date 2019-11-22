@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if(!isset($_SESSION['user']))
+  Header("Location: index.html");
+
 $id = trim($_POST['id']);
 
 if(!empty($id)){

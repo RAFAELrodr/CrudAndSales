@@ -1,7 +1,7 @@
 <?php
-/* session_start();
+ session_start();
 if(!isset($_SESSION['user']))
-  Header("Location: index.html"); */
+  Header("Location: index.html");
   ?>
 <!doctype html>
 <html lang="pt-br">

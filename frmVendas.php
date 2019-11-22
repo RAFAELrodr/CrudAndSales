@@ -1,7 +1,7 @@
 <?php
-/* session_start();
+session_start();
   if (!isset($_SESSION['user']))
-    Header("Location: index.html"); */
+    Header("Location: index.html");
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -29,7 +29,7 @@
                 <a class="nav-item nav-link" href="home.php">Home </a>
                 <a class="nav-item nav-link" href="frmListProd.php">Produtos</a>
                 <a class="nav-item nav-link" href="frmListCliente.php">Clientes</a>
-                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                <a class="nav-item nav-link" href="frmVendas.php">Vendas</a>
             </div>
         </div>
     </nav>
@@ -112,7 +112,7 @@
                     <th class="text-center" data-field="id" data-sortable="true">ID</th>
                     <th class="text-center" data-field="cliente" data-sortable="true">Cliente nº</th>
                     <th class="text-center" data-field="data" data-sortable="true">Data</th>
-                    <th class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th>
+                    <!-- <th class="text-center" data-field="remAndEdit" data-formatter="operateFormatter" data-events="operateEvents"></th> -->
                     <!-- <th class="text-center" data-field="remove" data-formatter="operateFormatterr" data-events="operateEvents"></th> -->
                 </tr>
 
@@ -126,7 +126,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
 
-    <script>
+    <!-- <script>
         var $table = $('#table')
 
         function operateFormatter(value, row, index) {
@@ -149,7 +149,7 @@
             }
             
         }
-    </script>
+    </script> -->
 
     <script>
         $(document).ready(function() {

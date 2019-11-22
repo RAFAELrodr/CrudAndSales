@@ -1,3 +1,8 @@
+<?php 
+if(!isset($_SESSION['user']))
+Header("Location: index.html");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
